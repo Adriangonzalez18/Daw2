@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Validación</title>
+  <style>
+    input, select {
+      display: block;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    input.error {
+      background-color: #ffcccc;
+    }
+    button:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Formulario de Registro</h2>
+  <form id="registroForm">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" placeholder="Introduzca su nombre (MAYÚSCULAS)" required>
+    
+    <label for="apellido">Apellidos</label>
+    <input type="text" id="apellido" placeholder="Introduzca sus apellidos (MAYÚSCULAS)" required>
+    
+    <label for="tipoVia">Tipo de Vía</label>
+    <select id="tipoVia">
+      <option value="Calle">Calle</option>
+      <option value="Avenida">Avenida</option>
+      <option value="Plaza">Plaza</option>
+    </select>
+
+    <label for="direccion">Dirección</label>
+    <input type="text" id="direccion" placeholder="Introduzca su dirección (MAYÚSCULAS)" required>
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Introduzca un email válido" required>
+    
+    <label for="telefono">Teléfono</label>
+    <input type="text" id="telefono" placeholder="9 dígitos" required>
+    
+    <label for="edad">Edad</label>
+    <input type="number" id="edad" placeholder="Entre 0 y 120 años" required>
+    
+    <label for="dni">DNI</label>
+    <input type="text" id="dni" placeholder="8 números y 1 letra" required>
+
+    <button type="submit" id="enviarBtn" disabled>Enviar</button>
+  </form>
+
+  <script src="script.js"></script> <!-- Enlace al archivo JavaScript externo -->
+  
+</body>
+</html>
+
