@@ -1,0 +1,87 @@
+/* Estilos generales para el fondo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #00aeff, #5483fb);
+  }
+  
+  /* Contenedor del formulario */
+  .form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+  }
+  
+  /* Título del formulario */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Estilos para las etiquetas */
+  label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para los inputs y select */
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  /* Cambios en el input cuando está enfocado */
+  input:focus, select:focus {
+    outline: none;
+    border-color: #00aeff;
+  }
+  
+  /* Estilo para el botón */
+  button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #00aeff, #5483fb);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  /* Hover del botón */
+  button:hover {
+    background: linear-gradient(135deg, #00aeff, #406ac4);
+  }
+  
+  /* Estilo del botón deshabilitado */
+  button:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+  
+  /* Ajustes de texto para entradas */
+  input::placeholder {
+    color: #bbb;
+    font-size: 14px;
+  }
+  
+  
