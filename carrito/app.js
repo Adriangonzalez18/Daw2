@@ -1,7 +1,25 @@
+// Simulación de productos disponibles en el carrito
+/*const productos = [
+    { SKU: '0K3QOSOV4V', title: 'iPhone 13 Pro', price: 938.99 },
+    { SKU: 'TGD5X0RY1L', title: 'Cargador', price: 49.99 },
+    { SKU: 'IOKW9BQ9F3', title: 'Funda de piel', price: 79.99 }
+];
+*/
+
+// Simulación de la llamada a una API para obtener los productos
+fetch('https://jsonblob.com/api/jsonBlob/1293960939114979328')
+    .then(response => response.json())
+    .then(data => {
+        const productos = new Carrito(data.products);
+        carrito.renderizarProductosIniciales(); // Renderizar los productos en la tabla
+        carrito.actualizarTotal(); // Inicializar el carrito vacío con el total
+    })
+    .catch(error => console.log('Error al cargar los productos: ', error));
+
 // Clase Carrito para manejar la lógica del carrito
 class Carrito {
     constructor(productos) {
-        this.productos = productos;  // Todos los productos de la API
+        this.productos = productos;  // Todos los productos disponibles
         this.carrito = {};  // Objeto para almacenar productos y sus cantidades
     }
 
@@ -79,12 +97,9 @@ class Carrito {
     }
 }
 
-// Simulación de la llamada a una API para obtener los productos
-fetch('https://jsonblob.com/1293960939114979328')
-    .then(response => response.json())
-    .then(data => {
-        const carrito = new Carrito(data.products);
-        carrito.renderizarProductosIniciales(); // Renderizar los productos en la tabla
-        carrito.actualizarTotal(); // Inicializar el carrito vacío con el total
-    })
-    .catch(error => console.log('Error al cargar los productos: ', error));
+// Iniciar carrito con los productos simulados
+const carrito = new Carrito(productos);
+carrito.renderizarProductosIniciales(); // Renderizar los productos en la tabla
+carrito.actualizarTotal(); // Inicializar el carrito vacío con el total
+
+
