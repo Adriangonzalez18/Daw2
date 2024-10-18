@@ -1,13 +1,11 @@
 // Simulación de productos disponibles en el carrito
-/*const productos = [
+const productos = [
     { SKU: '0K3QOSOV4V', title: 'iPhone 13 Pro', price: 938.99 },
     { SKU: 'TGD5X0RY1L', title: 'Cargador', price: 49.99 },
     { SKU: 'IOKW9BQ9F3', title: 'Funda de piel', price: 79.99 }
 ];
-*/
 
-// Simulación de la llamada a una API para obtener los productos
-fetch('https://jsonblob.com/api/jsonBlob/1293960939114979328')
+fetch('https://jsonblob.com/api/1296830644477616128')
     .then(response => response.json())
     .then(data => {
         const productos = new Carrito(data.products);
@@ -16,11 +14,11 @@ fetch('https://jsonblob.com/api/jsonBlob/1293960939114979328')
     })
     .catch(error => console.log('Error al cargar los productos: ', error));
 
-// Clase Carrito para manejar la lógica del carrito
+// Clase Carrito 
 class Carrito {
     constructor(productos) {
         this.productos = productos;  // Todos los productos disponibles
-        this.carrito = {};  // Objeto para almacenar productos y sus cantidades
+        this.carrito = {};  // almacen de productos y sus cantidades
     }
 
     actualizarUnidades(sku, unidades) {
@@ -69,7 +67,7 @@ class Carrito {
         this.productos.forEach(producto => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${producto.title}</td>
+                <td>${producto.title}<br>ref: ${producto.SKU}</td>
                 <td><input type="number" value="0" min="0" data-sku="${producto.SKU}"></td>
                 <td>${producto.price}€</td>
                 <td>0€</td>

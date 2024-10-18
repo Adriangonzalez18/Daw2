@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla Fusionada</title>
+    <title>Tabla Fusionada con CSS</title>
     <style>
         table {
+            width: 60%;
             border-collapse: collapse;
-            width: 50%;
-            margin: 20px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
         }
         th, td {
             border: 1px solid black;
+            padding: 10px;
             text-align: center;
-            padding: 8px;
         }
         th {
             background-color: #f2f2f2;
+        }
+        th[colspan="4"] {
+            background-color: #d9d9d9;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -51,4 +56,3 @@
 
 </body>
 </html>
-

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Fusionada con CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: capitalize;
+        }
+        th[colspan="4"] {
+            background-color: #2e7d32;
+            font-size: 1.2em;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        td {
+            font-size: 1em;
+        }
+        /* Iconos en las cabeceras */
+        th i {
+            margin-left: 5px;
+            color: #fff;
+        }
+        /* Responsividad */
+        @media (max-width: 600px) {
+            table, th, td {
+                width: 100%;
+                display: block;
+            }
+            th, td {
+                text-align: left;
+                padding: 10px;
+            }
+            th[colspan="4"] {
+                text-align: center;
+            }
+        }
+    </style>
+    <!-- Incluimos la librería de iconos de Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th colspan="4">Tabla fusionada</th>
+    </tr>
+    <tr>
+        <th rowspan="2"></th>
+        <th colspan="2">Media</th>
+        <th rowspan="2">Ojos Rojos <i class="fas fa-eye"></i></th>
+    </tr>
+    <tr>
+        <th>Altura <i class="fas fa-ruler-vertical"></i></th>
+        <th>Peso <i class="fas fa-weight"></i></th>
+    </tr>
+    <tr>
+        <td>Machos</td>
+        <td>1.9 m</td>
+        <td>0.003 kg</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Hembras</td>
+        <td>1.7 m</td>
+        <td>0.002 kg</td>
+        <td></td>
+    </tr>
+</table>
+
+</body>
+</html>
