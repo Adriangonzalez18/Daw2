@@ -5,15 +5,6 @@ const productos = [
     { SKU: 'IOKW9BQ9F3', title: 'Funda de piel', price: 79.99 }
 ];
 
-fetch('https://jsonblob.com/api/1296830644477616128')
-    .then(response => response.json())
-    .then(data => {
-        const productos = new Carrito(data.products);
-        carrito.renderizarProductosIniciales(); // Renderizar los productos en la tabla
-        carrito.actualizarTotal(); // Inicializar el carrito vacío con el total
-    })
-    .catch(error => console.log('Error al cargar los productos: ', error));
-
 // Clase Carrito 
 class Carrito {
     constructor(productos) {
