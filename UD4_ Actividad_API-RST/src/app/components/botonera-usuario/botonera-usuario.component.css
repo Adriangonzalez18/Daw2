@@ -1,0 +1,39 @@
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary {
+    background-color: #004299a4;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #004299a4;
+    border-color: #545b62;
+}
+
+.btn-warning {
+    background-color: #ffd900a4;
+    border-color: #545b62;
+}
+
+.d-flex.gap-2 > * {
+    margin-right: 8px;
+}
+
+@media (max-width: 770px) {
+    .btn{
+    border-radius: 7px;
+    padding: 2px 1px;
+    }
+}
+
+@media (max-width: 400px) {
+    .btn{
+    border-radius: 7px;
+    padding: 6px 7px;
+    }
+}

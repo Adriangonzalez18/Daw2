@@ -1,0 +1,9 @@
+<div class="d-flex gap-2">
+    @if(parent == 'card'){
+        <a [routerLink]="['/usuario', miId]" class="btn btn-secondary"> Ver detalle</a>
+    }@else if(parent == 'view'){
+        <a [routerLink]="['/usuario']" class="btn btn-secondary"> Volver al listado</a>
+    }
+    <a [routerLink]="['/actualizar','usuario', miId]" class="btn btn-warning">Actualizar</a>
+    <button class="btn btn-danger" (click)="borrarusuario(miId)">Borrar</button>
+</div>

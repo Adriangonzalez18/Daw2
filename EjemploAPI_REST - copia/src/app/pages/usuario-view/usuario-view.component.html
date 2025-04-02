@@ -1,0 +1,18 @@
+<section class="container mt-3">
+    <div class="card shadow p-3">
+        <div class="row">
+            <figure class="col-12 col-md-3">
+                <img class="img-fluid" [src]="miusuario.image" [alt]="miusuario.username">
+            </figure>
+            <div class="col-12 col-md-9">
+                <h2>{{miusuario.id}}</h2>
+                <hr>
+                <p>nombre: {{miusuario.first_name}}</p>
+                <p>apellido: {{miusuario.last_name}}</p>
+                <p>usuario: {{miusuario.username}}</p>
+                <p>email: {{miusuario.email}}</p>
+                <app-botonera-usuario [parent]="'view'" [miId]="miusuario._id"></app-botonera-usuario>
+            </div>
+        </div>
+    </div>
+</section>
