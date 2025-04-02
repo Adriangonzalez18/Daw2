@@ -1,10 +1,10 @@
 export interface iusuario {
     _id: string,
-    id: number,
+    id?: number,
     first_name:   string,
     last_name: string,
-    username:  number,
+    username:  string,
     email:   string,
     image:   string,
-    pasword?: string,
+    pasword: string,
 }

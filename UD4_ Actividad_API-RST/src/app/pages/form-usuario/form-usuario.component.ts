@@ -23,14 +23,15 @@ export class FormusuarioComponent {
 
   constructor(){
     this.usuarioForm = new FormGroup({
-      first_name: new FormControl('', [Validators.required]),
-      last_name: new FormControl('', [Validators.required]),
-      username: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      image: new FormControl('',[Validators.required])
+      first_name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      last_name: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      username: new FormControl('', [Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+[.][a-zA-Z0-9]*$")]),
+      email: new FormControl('', [Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")]),
+      image: new FormControl('',[Validators.required]),
+      pasword: new FormControl('',[Validators.required,Validators.minLength(6)])
     }, []);
   }
-
+  
   ngOnInit(): void{
     this.activatedRoute.params.subscribe(async (params: any) =>{
       if(params.idusuario){
@@ -39,11 +40,13 @@ export class FormusuarioComponent {
         const response = await this.usuarioService.getById(params.idusuario);
 
         this.usuarioForm = new FormGroup({
-          first_name: new FormControl(response.first_name, []),
-          last_name: new FormControl(response.last_name, [Validators.required]),
-          username: new FormControl(response.username, [Validators.required]),
-          email: new FormControl(response.email, [Validators.required]),
-          image: new FormControl(response.image, [Validators.required])
+          _id: new FormControl(response._id,[]),
+          first_name: new FormControl(response.first_name, [Validators.required, Validators.minLength(3)]),
+          last_name: new FormControl(response.last_name, [Validators.required,Validators.minLength(3)]),
+          username: new FormControl(response.username, [Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+[.][a-zA-Z0-9]*$")]),
+          email: new FormControl(response.email, [Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")]),
+          image: new FormControl(response.image, [Validators.required]),
+          pasword: new FormControl(response.pasword, [Validators.required,Validators.minLength(6)])
         }, []);
       }
     });
